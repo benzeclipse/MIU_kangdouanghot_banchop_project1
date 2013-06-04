@@ -49,6 +49,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 	 			main('back').style.display = "inline";	
 	 			main('h2').style.display = "none";
 	 			main('h1').style.display = "none";
+	 			
 	 		    break;
 
 	 		case "off" :
@@ -57,6 +58,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 	 			main('clearData').style.display ="none";
 	 			main('saveValues').style.display = "block";
 	 			main('items').style.display="none";
+	 			main('back').style.display = "block";
 	 		    break;
 	 		
 	 		default:
@@ -342,11 +344,11 @@ window.addEventListener( "DOMContentLoaded", function() {
 		
 		//Search Button
 	
-		var searchButt = main('searchButton');
-		searchButt.addEventListener("click", getSearch);
+		var searchB = main('searchButton');
+		searchB.addEventListener("click", getSearch);
 		
 		
-		 function getSearch (){
+		 function getSearch(){
 				var term = main('search').value;
 				var catergory = main('group').value;
 				
