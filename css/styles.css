@@ -26,7 +26,7 @@ h1 {
     color: #F8F8FF;
     font-size: 200%;
     padding: .5em;
-    border: 3px solid black;
+    border: 2px solid black;
     font-family:"Times New Roman", Times, serif;
 
 }
@@ -53,9 +53,10 @@ nav {
 	padding: .5em;
     background-color: #87CEFA; 
     font-family:"Times New Roman", Times, serif;
+    border: 1px solid black;
 }
 
-#nav2 {
+div {
 	font-size: 120%;
 	text-align: center;
 	color: #000000;
@@ -63,8 +64,6 @@ nav {
     background-color: #ffffff; 
     font-family:"Times New Roman", Times, serif;
 }
-
-
 
 input {
 	color: #191970;
@@ -89,7 +88,7 @@ fieldset {
 	margin: .2em 0;
 }
 
-.nav{
+.navi{
     border:1px solid #ccc;
     border-width:1px 0;
     list-style:none;
@@ -97,10 +96,10 @@ fieldset {
     padding:0;
     text-align:center;
 }
-.nav li{
+.navi li{
     display:inline;
 }
-.nav a{
+.navi a{
     display:inline-block;
     padding:10px;
 }
