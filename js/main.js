@@ -1,8 +1,8 @@
 //alert("wrong");
-// MIU
-// Term 1306
+// VFW
+// Term 1305
 // Banchop Ben Kangdouangnhot
-// Project 1
+// Project 4
 
 // Wait until DOM is ready
 window.addEventListener( "DOMContentLoaded", function() {
@@ -11,7 +11,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 	function main ( clear ) {
 		var teams = document.getElementById( clear );
 		return teams;
-};
+}
 
 	// Create drop down elements from js
 	function dropDownList ( ) {
@@ -27,7 +27,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 	 		makeSelection.appendChild(makeOpt);
 		 }
 	  	  selector.appendChild(makeSelection);
-};
+}
 
 	// Find values of selected radio buttons
 	function getRadios() {
@@ -37,7 +37,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 				seasonValue = setRadios[i].value;
 			}
 	 }
-};
+} 
  
 	function toggle( togg ) {
 		 switch(togg) {
@@ -49,7 +49,6 @@ window.addEventListener( "DOMContentLoaded", function() {
 	 			main('back').style.display = "inline";	
 	 			main('h2').style.display = "none";
 	 			main('h1').style.display = "none";
-	 			
 	 		    break;
 
 	 		case "off" :
@@ -58,14 +57,13 @@ window.addEventListener( "DOMContentLoaded", function() {
 	 			main('clearData').style.display ="none";
 	 			main('saveValues').style.display = "block";
 	 			main('items').style.display="none";
-	 			main('back').style.display = "block";
 	 		    break;
 	 		
 	 		default:
 	 			return false;
 		}
 
-};
+}
 
 	// get random number
 	function storeLocalData( key ) {  // passing in "edit" item from tutorial 3.6
@@ -90,14 +88,14 @@ window.addEventListener( "DOMContentLoaded", function() {
 		it.group 	= ["More Stuff ", 		 main('group').value];  
 		it.aDate	= ["Date ", 			 main("aDate").value];
 		it.range	= ["Tickets Desired ",	 main("range").value];
-		it.season	= ["Season ", 			 seasonValue];          
+		it.any	    = ["Season ", 			 seasonValue];          
 		it.payments	= ["Payments ", 		 main("payments").value];	
 		it.concerns = ["Concerns",	         main("concerns").value];
 
 		// save data to local storage! use Stringify to convert our object to a string
 		localStorage.setItem( getId, JSON.stringify(it) );
 		alert("Data has been saved!");
-};
+}
 
 	// write data from local storage to browser
 	function getData () {
@@ -145,7 +143,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 			 makeItemLinks(localStorage.key(i), linksLi); 
 		}	 // the makeItemLinks(localStorage.key[i],linksLi); threw me for a curve!!!! had [i], instead of (i)!!!
 
-};
+}
 
 	// Getting images from right category being display, project 4
 	function getImages(dropDownList, makeSubList){
@@ -155,7 +153,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 		var setSource = newImage.setAttribute('src' , "../image/"+dropDownList+".png");
 		imageLi.appendChild(newImage);
 
-};
+}
 
 
 	// make item links functions for local data
@@ -182,7 +180,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 		deleteLink.innerHTML = deleteText;
 		linksLi.appendChild(deleteLink);
 
-};
+}
 
 	function deleteItem () {
 		var askConfirm = confirm("are you sure want to delete info?");
@@ -192,7 +190,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 		}else{
 			alert("Nothing has been change");
 	 }
-};
+}
 
 	function editItem() {
 	// get item from local storage.
@@ -206,19 +204,20 @@ window.addEventListener( "DOMContentLoaded", function() {
   		main('sport').value = it.sport[1];
 		main('tname').value = it.tname[1];
 		main('name').value  = it.name[1];
-		main('group').value = it.group[1];
-		main('aDate').value = it.aDate[1]; 
-		main('range').value = it.range[1]; 
 		
 		var radios = document.forms[0].any; //check radios when editing.
 		for(var i =0; j=radios, i<j; i++){
-			if(radios[i].value == "season" && item.any[1] == "single"){
+			if(radios[i].value == "season" && item.any[1] == "season"){
 				radios[i].setAttribute("checked", "checked");
-			}else if(radios[i] == "single" && item.any[1] == "season"){
+			}else if(radios[i] == "single" && item.any[1] == "single"){
 				radios[i].setAttribute("checked","checked");
 			}
 		}
 		 
+		
+		main('group').value = it.group[1];
+		main('aDate').value = it.aDate[1]; 
+		main('range').value = it.range[1];  
 		main("payments").value = it.payments[1];
 		main("concerns").value = it.concerns[1];  
 
@@ -231,7 +230,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 		editSubmit.addEventListener("click", validateForm);
 		editSubmit.key = this.key; // enabling submit key
 
-};
+}
 
 	function clearLocalData () {
 		var youSure = confirm("You sure you want to delete?");
@@ -246,7 +245,7 @@ window.addEventListener( "DOMContentLoaded", function() {
 			}
 	  } 
 
-};
+}
 
 	function validateForm( eventData ) {
 	// Define the elements we want to check
@@ -302,15 +301,8 @@ window.addEventListener( "DOMContentLoaded", function() {
 	   		 storeLocalData(this.key);  //adding key to edit a certain file
 
   		}
-}; 
+}  
 
-		// range slider
-		var sliderRange = document.getElementById("range");
-		var sliderDisplay = document.getElementById("tickets");
-
-	sliderRange.onchange = function(){
-   	sliderDisplay.value = sliderRange.value;
-} 
 
 
 	function fillData(){
@@ -319,10 +311,10 @@ window.addEventListener( "DOMContentLoaded", function() {
 		localStorage.setItem(id, JSON.stringify(json[n]));
 	}
 
-};
+}
 
 		// Variable defaults drop down menu
-		var addStuff = [ "<--->","Apparels", "Souvenirs", "Tickets" ],
+		var addStuff = [ "Apparels", "Souvenirs", "Tickets" ],
 		seasonValue,
 		errorMsg = main("errors");
 
@@ -338,130 +330,5 @@ window.addEventListener( "DOMContentLoaded", function() {
 
 		var saveButton = main("saveValues");
 		saveButton.addEventListener("click",  validateForm);
-		
-		
-		
-		
-		//Search Button
-	
-		var searchB = main('searchButton');
-		searchB.addEventListener("click", getSearch);
-		
-		
-		 function getSearch(){
-				var term = main('search').value;
-				var catergory = main('group').value;
-				
-				
-				
-				//Searching by 'CATEGORY' only
-				if(catergory != "<--->" && term === ""){
-				
-				//Printing to local Screen!!
-				var makeMyList = document.createElement('ul');
-				document.getElementById('results').appendChild(makeMyList);
-				
-					for(var i = 0; j=localStorage.length, i<j; i++){
-						var key = localStorage.key(i);
-						var value = localStorage.getItem(key);
-						var object = JSON.parse(value);
-						
-						if(catergory === object.group[1]){
-						
-							//Printing to screen
-							var listItem = document.createElement('li');
-							makeMyList.appendChild(listItem);
-							var subList = document.createElement('ul');
-							listItem.appendChild(subList);
-						
-							for(n in object){
-								
-								//Printing to Screen
-								var finalLi = document.createElement('li');
-								subList.appendChild(finalLi);
-								finalLi.innerHTML = object[n][0]+ " : " + object[n][1];
-								//console.log(object[n][0]+ " : " + object[n][1]);
-							}
-						}
-					}
-					
-				}   
-				
-	
-				//Searching by 'TERM' only
-				if(catergory === "<--->" && term != ""){
-				
-					//Printing to local Screen!!
-					var makeMyList = document.createElement('ul');
-					document.getElementById('results').appendChild(makeMyList);
-				
-				
-						for(var i = 0; j=localStorage.length, i<j; i++){
-						var key = localStorage.key(i);
-						var value = localStorage.getItem(key);
-						var object = JSON.parse(value);
-						
-						for(n in object){
-							if(term === object[n][1]){
-							
-							//Printing to screen
-							var listItem = document.createElement('li');
-							makeMyList.appendChild(listItem);
-							var subList = document.createElement('ul');
-							listItem.appendChild(subList);
-							
-							
-								for(m in object){
-								
-								//Printing to screen
-								var finalLi = document.createElement('li');
-								subList.appendChild(finalLi);
-								finalLi.innerHTML = object[m][0]+ " : " + object[m][1];
-								
-								
-									//console.log(object[m][0]+ " : " + object[m][1]);
-								}
-							}
-						}
-				    }
-				}
-				
-				//Searching by both 'TERM' and 'CATEGORY'
-				if(catergory != "<--->" && term != ""){
-				
-					//Printing to local Screen!!
-					var makeMyList = document.createElement('ul');
-					document.getElementById('results').appendChild(makeMyList);
-				
-				
-						for(var i = 0; j=localStorage.length, i<j; i++){
-						var key = localStorage.key(i);
-						var value = localStorage.getItem(key);
-						var object = JSON.parse(value);
-				
-						for(n in object){
-							if(term === object[n][1] && catergory === object.group[1]){
-							//Printing to screen
-							var listItem = document.createElement('li');
-							makeMyList.appendChild(listItem);
-							var subList = document.createElement('ul');
-							listItem.appendChild(subList);
-							
-								for(m in object){
-								//Printing to screen
-								var finalLi = document.createElement('li');
-								subList.appendChild(finalLi);
-								finalLi.innerHTML = object[m][0]+ " : " + object[m][1];
-							    //console.log(object[m][0]+ " : " + object[m][1]);
-							}
-						}
-					}
-						
-				 }
-		     } 
-		       
-		};
-		
-			
 
 });
