@@ -1,4 +1,4 @@
-//alert("wrong");
+//alert("Hello World");
 // VFW
 // Term 1305
 // Banchop Ben Kangdouangnhot
@@ -46,9 +46,9 @@ window.addEventListener( "DOMContentLoaded", function() {
 	 			main("forms").style.display = "none";
 	 			main('Info').style.display ="none";
 	 			main('clearData').style.display ="none";
-	 			main('back').style.display = "inline";	
+	 			main('back').style.display = "block";	
 	 			main('h2').style.display = "none";
-	 			main('h1').style.display = "none";
+	 			main('h1').style.display = "block";
 	 		    break;
 
 	 		case "off" :
