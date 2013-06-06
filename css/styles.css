@@ -17,27 +17,21 @@ body {
 }
 p {
     margin: 1.5em 0;
-   
 }
 h1 {
-	
 	text-align: center;
-    background-color: #00BFFF;
-    color: #F8F8FF;
-    font-size: 200%;
-    padding: .5em;
-    border: 2px solid black;
-    font-family:"Times New Roman", Times, serif;
+	font-size: 200%;
 
 }
 
 h2 {
 	text-align: left;
-	font-size: 130%;
-	color: #9400D3;
+	font-size: 110%;
+	color: #000000;
 	text-align: center;
     padding: 1em;
     font-family:"Times New Roman", Times, serif;
+    background-color: #00BFFF;
 }
 
 label {
@@ -88,18 +82,4 @@ fieldset {
 	margin: .2em 0;
 }
 
-.navi{
-    border:1px solid #ccc;
-    border-width:1px 0;
-    list-style:none;
-    margin:0;
-    padding:0;
-    text-align:center;
-}
-.navi li{
-    display:inline;
-}
-.navi a{
-    display:inline-block;
-    padding:10px;
-}
+
